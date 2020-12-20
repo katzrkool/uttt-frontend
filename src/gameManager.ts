@@ -236,6 +236,7 @@ class GameManager {
     
     async watchMatchChanges(code: string, setWinStatus: React.Dispatch<React.SetStateAction<WinStatus>>, setGameEnd: React.Dispatch<React.SetStateAction<number>>, setBoard?:  React.Dispatch<React.SetStateAction<GlobalBoard>>) {
         let matchOver = false;
+        let lastNotification = 0;
         let oldMatchChange = JSON.stringify(this.moveUpdates[code]);
         while (!matchOver) {
             if (oldMatchChange !== JSON.stringify(this.moveUpdates[code])) {
@@ -258,7 +259,10 @@ class GameManager {
                         sendNotification(`Match ${code} is over. ${winChar} won!`);
                     }
                 } else {
-                    sendNotification(`Match ${code} just updated.`);
+                    if (Date.now() - lastNotification > 500) {
+                        sendNotification(`Match ${code} just updated.`);
+                        lastNotification = Date.now();
+                    }
                 }
                 this.updateLocalStorage(code);
             }
