@@ -1,5 +1,5 @@
 # UTTT-Frontend
-A Ultimate Tic Tac Toe React App with online multiplayer.
+Ultimate Tic Tac Toe React App with Online Multiplayer.
 
 The backend is located at [uttt-backend](https://github.com/katzrkool/uttt-frontend).
 
