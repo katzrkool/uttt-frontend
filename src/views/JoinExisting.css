@@ -7,3 +7,9 @@
 #joingame .roundButton {
     margin: 0 auto;
 }
+
+@media (max-width: 500px) {
+    #joingame {
+        width: 95%;
+    }
+}

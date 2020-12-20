@@ -68,6 +68,16 @@ h3 {
     margin: 0 0.5em;
 }
 
+@media (max-width: 410px) {
+    #onlineModes {
+        flex-flow: column;
+    }
+    
+    #onlineModes button {
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 920px) {
     #demoBoard {
         display: none;
@@ -92,7 +102,6 @@ h3 {
     }
     
     #onlineModes {
-        min-width: 23em;
         width: 50%;
         margin: 0 auto;
     }

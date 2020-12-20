@@ -8,8 +8,8 @@ main > p {
 }
 
 #blankboard {
-    height: 400px;
-    margin: 33px;
+    width: min(400px, 95%);
+    margin: min(33px, 3vw);
 }
 
 #matchmakingfooter {

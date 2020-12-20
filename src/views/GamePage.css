@@ -36,6 +36,8 @@ aside {
 
 aside > h2 {
     padding-top: 0;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 #gamefield {
@@ -49,6 +51,8 @@ aside > h2 {
 
 .squareStatus {
     text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .connectionBar {

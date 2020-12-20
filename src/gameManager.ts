@@ -92,6 +92,11 @@ class GameManager {
     
     setupSock(): WebSocket {
         const sock = new SockJS(this.url);
+        sock.onopen = () => {
+            if (this.setConnection) {
+                this.setConnection(ConnectionStatus.connected);
+            }  
+        };
         sock.onmessage = (e) => {
             const data = JSON.parse(e.data);
             if (data.msgType === 'matchStarted') {
@@ -104,11 +109,14 @@ class GameManager {
         };
         sock.onclose = (event) => {
             if (event.code === 1002) {
-                console.error(`Websocket error observed: ${event}`);
+                console.error(`Websocket error observed: ${JSON.stringify(event)}`);
                 alert(`Websocket error observed: ${event.reason}`);
             } else if (!event.wasClean) {
-                console.error(`Unexpected disconnect from server ${event}`);
+                console.error(`Unexpected disconnect from server: ${JSON.stringify(event)}`);
                 alert(`Unexpected disconnect from server ${event.reason}`);
+            }
+            if (this.setConnection) {
+                this.setConnection(ConnectionStatus.disconnected);
             }
         };
         this.sockIteration += 1;
