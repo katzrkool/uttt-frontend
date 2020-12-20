@@ -15,6 +15,7 @@ import StatusBar from './components/StatusBar';
 import ConnectionStatus from '../interfaces/ConnectionStatus';
 import LoadingPage from './LoadingPage';
 import Footer from './components/Footer';
+import {setTitle} from '../util';
 
 function prettifyPosition(position: Position): string {
     switch (position) {
@@ -129,8 +130,10 @@ function GamePage(): JSX.Element {
     
     useEffect(() => {
         init();
+        const titleCleanup = setTitle('Ultimate Tic Tac Toe: ' + code);
         return function cleanup() {
             gameManager.unsetSetConnection();
+            titleCleanup();
         };
     }, [started]);
     

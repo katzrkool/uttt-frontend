@@ -5,6 +5,7 @@ import gameManager from '../gameManager';
 import BlankBoard from '../img/blankBoard.svg';
 import './JoinExisting.css';
 import * as querystring from 'querystring';
+import {setTitle} from '../util';
 
 function JoinExisting(): JSX.Element {
     const {code} = useParams();
@@ -44,8 +45,13 @@ function JoinExisting(): JSX.Element {
             if ((resp.players as {name: string}[]).length > 0) {
                 setOpponentName((resp.players as {name: string}[])[0].name);
             }
+            document.title = `Join Match ${code} against ${(resp.players as {name: string}[])[0].name}`;
         }
+        const titleCleanup = setTitle(`Join Match ${code}`);
         main();
+        return function cleanup() {
+            titleCleanup();
+        }
     }, []);
     
     const joinMatch = async (localName?: string) => {
@@ -79,7 +85,7 @@ function JoinExisting(): JSX.Element {
                             })}/>
                         </label>
                         {(name.length > 0 && !searching) &&
-                        <button className="roundButton" style={{backgroundColor: '#e95f5f'}} onClick={() => {joinMatch()}}>Join Match</button>
+                        <button className="roundButton" style={{backgroundColor: '#e95f5f'}} onClick={() => {joinMatch();}}>Join Match</button>
                         }
                         {searching &&
                             <img className="rotate-center" id="miniBlankboard" src={BlankBoard} alt="Blank Ultimate Tic Tac Toe Board" />

@@ -16,7 +16,7 @@ function ConnectionBar(props: {connection: ConnectionStatus, reconnect: () => vo
                 <p className="connectionStatus">{statusMsg}</p>
             </div>
             {props.connection === ConnectionStatus.disconnected &&
-                <button className="roundButton smallerButton" style={{backgroundColor: '#e95f5f'}} onClick={props.reconnect}>Reconnect</button>
+                <button id="reconnectButton" className="roundButton smallerButton" style={{backgroundColor: '#e95f5f'}} onClick={props.reconnect}>Reconnect</button>
             }
         </div>
     );

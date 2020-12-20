@@ -4,7 +4,7 @@ import GlobalBoard from './interfaces/GlobalBoard';
 import WinStatus from './interfaces/WinStatus';
 import Position from './interfaces/Position';
 import ConnectionStatus from './interfaces/ConnectionStatus';
-import {sendNotification} from './notifications';
+import {sendNotification} from './util';
 import Square from './interfaces/Square';
 
 class GameManager {

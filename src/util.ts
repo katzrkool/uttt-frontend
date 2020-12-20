@@ -14,4 +14,10 @@ function sendNotification(text: string): void {
     }
 }
 
-export {sendNotification};
+function setTitle(title: string) {
+    const prevTitle = document.title;
+    document.title = title;
+    return () => document.title = prevTitle;
+}
+
+export {sendNotification, setTitle};
