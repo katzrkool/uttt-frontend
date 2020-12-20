@@ -113,7 +113,6 @@ class GameManager {
                 alert(`Websocket error observed: ${event.reason}`);
             } else if (!event.wasClean) {
                 console.error(`Unexpected disconnect from server: ${JSON.stringify(event)}`);
-                alert(`Unexpected disconnect from server ${event.reason}`);
             }
             if (this.setConnection) {
                 this.setConnection(ConnectionStatus.disconnected);
