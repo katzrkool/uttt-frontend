@@ -8,7 +8,7 @@ function Header(): JSX.Element {
     return (
         <nav>
             <ul id='horizontal-nav'>
-                <li><a href="../">lkellar.org</a></li>
+                <li><a href="https://lkellar.org">lkellar.org</a></li>
                 <li><a href="https://crimemap.app">Crime Map</a></li>
                 <li><a href="../trips/">Trips</a></li>
                 <li><a href="https://ftview.lkellar.org">FTView</a></li>
