@@ -1,0 +1,156 @@
+#demoBoard {
+    width: 40%;
+    margin-right: 2em;
+    vertical-align: top;
+    margin-bottom: auto;
+}
+
+#startgame {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+}
+
+#startgame p {
+    font-size: x-large;
+}
+
+#rulesHeader {
+    margin: 0 1em;
+}
+
+#homemain > div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.labelInfo {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+}
+
+label input {
+    padding: 1vh 1vw;
+    margin: 1em;
+    font-size: 24px;
+    display: inline;
+}
+
+label {
+    font-size: 24px;
+    text-align: right;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+h2 {
+    padding-top: 1em;
+}
+
+h3 {
+    font-size: x-large;
+}
+
+.subtitle {
+    font-size: medium;
+}
+
+#onlineModes {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 2em;
+    justify-content: space-between;
+}
+
+#onlineModes > div {
+    margin: 0 0.5em;
+}
+
+@media (max-width: 920px) {
+    #demoBoard {
+        display: none;
+    }
+    
+    #startgame {
+        margin: 0 auto;
+        width: 95%;
+    }
+    
+    label {
+        text-align: left;
+        display: inline-grid;
+    }
+    
+    label > input {
+        margin-top: 0.5em;
+    }
+    
+    .labelInfo {    
+        margin-left: 1em;
+    }
+    
+    #onlineModes {
+        min-width: 23em;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+#homemain {
+    margin-bottom: 1em;
+}
+
+/*#privateHeader {
+    margin-bottom: 0;
+}*/
+
+#visibleCheckLabel {
+    font-size: 16px;
+    display: inline;
+}
+
+#joinMatchContainer {
+    margin: 0 auto !important;
+}
+
+.gameInfoBubble p {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 0.5em 0;
+}
+
+.gameInfoBubble span {
+    display: flex;
+}
+
+.gameInfoBubble .timer, .gameInfoBubble .howLongAgo {
+    margin-left: 0.25em;
+}
+
+.gameInfoBubble {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 1em auto;
+    border-style: solid;
+    padding: 0.5em 1em 1em 1em;
+    border-radius: 40px;
+}
+
+.gameInfoBubble > p {
+    margin: 0 auto;
+}
+
+#recentGames a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+#ruleslink {
+    text-decoration: underline;
+}

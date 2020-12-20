@@ -1,0 +1,119 @@
+:root {
+    --border-size: 0.3vh;
+    --mega-border-size: 1vh;
+}
+
+.miniBoard > div:not(:first-child) {
+    border-top: var(--border-size) solid #000000;
+}
+
+.miniBoard > div:not(:last-child) {
+    border-bottom: var(--border-size) solid #000000;
+}
+
+.miniBoard >div {
+    /*padding-bottom: 0.25em;*/
+    white-space: nowrap;
+}
+
+.miniBoard > div > img:not(:first-child) {
+    border-left: var(--border-size) solid #000000;
+}
+
+.miniBoard > div > img:not(:last-child) {
+    border-right: var(--border-size) solid #000000;
+}
+
+.space {
+    width: calc((75% - 0.4em) / 3);
+    vertical-align: middle;
+}
+
+.highlight > div:not(:first-child) {
+    border-top: var(--border-size) solid #DA4167;
+}
+
+.highlight > div:not(:last-child) {
+    border-bottom: var(--border-size) solid #DA4167;
+}
+
+.highlight > div > img:not(:first-child) {
+    border-left: var(--border-size) solid #DA4167;
+}
+
+.highlight > div > img:not(:last-child) {
+    border-right: var(--border-size) solid #DA4167;
+}
+
+.miniBoard > div > img {
+    padding: 4%;
+    margin-bottom: 0;
+}
+
+.miniBoard > div {
+    width: 100%;
+}
+
+.miniBoard {
+    height: 100%;
+    width: 100%;
+}
+
+.miniBoardContainer {
+    width: calc(100% /3);
+    position: relative;
+}
+
+
+.row {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+.row:not(:first-child) {
+    border-top: var(--mega-border-size) solid #000000;
+}
+
+.row > .miniBoardContainer:not(:first-child) {
+    border-left: var(--mega-border-size) solid #000000;
+}
+
+.gameBoard {
+    padding: 1em;
+}
+
+.active:hover {
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.active.xCandidate:hover {
+    
+    background-size: 75%;
+    background-image: url('./components/space/X.svg');
+}
+
+.active.yCandidate:hover {
+    
+    background-size: 75%;
+    background-image: url('./components/space/O.svg');
+}
+
+@media(max-width: 400px) {
+    :root {
+        --border-size: 0.2vh;
+        --mega-border-size: 0.6vh;
+    }
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+.overlay + .miniBoard {
+    opacity: 0.4;
+}

@@ -1,0 +1,9 @@
+#joingame {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#joingame .roundButton {
+    margin: 0 auto;
+}

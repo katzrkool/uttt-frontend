@@ -1,0 +1,25 @@
+#matchmakingmain {
+    margin: 0 10vw;
+    text-align: center;
+}
+
+main > p {
+    font-size: x-large;
+}
+
+#blankboard {
+    height: 400px;
+    margin: 33px;
+}
+
+#matchmakingfooter {
+    display: block;
+}
+#matchmakingfooter > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#matchmakingfooter > img {
+    margin-left: 1em;
+}

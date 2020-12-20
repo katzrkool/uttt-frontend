@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.nova
+.DS_store
+.env*
+bin
+node_modules

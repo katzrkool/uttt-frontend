@@ -1,0 +1,78 @@
+#gamepagemain .gameBoard {
+    border-right: black;
+    max-width: 1000px;
+    min-width: 300px;
+    width: 65vh;
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 0;
+}
+
+aside {
+    max-width: fit-content;
+    max-width: -moz-fit-content;
+    min-width: 150px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.statusfooter {
+    margin: 0 auto;
+    display: block;
+}
+
+@media(max-width: 760px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media(min-width: 760px) {
+    .statusfooter {
+        display: none;
+    }
+}
+
+aside > h2 {
+    padding-top: 0;
+}
+
+#gamefield {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.timer {
+    font-size: larger;
+}
+
+.squareStatus {
+    text-align: center;
+}
+
+.connectionBar {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 0 auto;
+}
+
+.connectionBar > div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.connectionBar > div > svg {
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.connectionStatus {
+    vertical-align: middle;
+    padding-left: 1em;
+}
+
+.smallerButton {
+    font-size: 100% !important;
+}

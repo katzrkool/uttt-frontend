@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Mini-X" transform="translate(4.000000, 4.000000)" stroke="#3D5467" stroke-width="7">
+            <line x1="3.88390506e-15" y1="-1.75059751e-14" x2="42.4264069" y2="42.4264069" id="Line-4"></line>
+            <line x1="42.6" y1="0.2" x2="0.173593129" y2="42.6264069" id="Line-4"></line>
+        </g>
+    </g>
+</svg>
