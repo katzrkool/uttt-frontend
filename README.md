@@ -1,7 +1,7 @@
 # UTTT-Frontend
 Ultimate Tic Tac Toe React App with Online Multiplayer.
 
-The backend is located at [uttt-backend](https://github.com/katzrkool/uttt-frontend).
+The backend is located at [uttt-backend](https://github.com/katzrkool/uttt-backend).
 
 ## Installation
 First, clone the repo and install dependencies with `yarn`. 
