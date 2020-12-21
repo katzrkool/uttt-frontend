@@ -80,7 +80,7 @@ function JoinExisting(): JSX.Element {
                         <h2>Join Game {code}{opponentName !== undefined ? ` against ${opponentName}` : ''}</h2>
                         <label>
                             <div className="labelInfo">Name:</div>
-                            <input placeholder="Lucas" type="text" value={name} onChange={((event) => {
+                            <input placeholder="Lucas" type="text" autoComplete="given-name" value={name} onChange={((event) => {
                                 setName(event?.currentTarget.value);
                             })}/>
                         </label>
