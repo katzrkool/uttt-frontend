@@ -83,19 +83,19 @@
     padding: 1em;
 }
 
-.active:hover {
+.active:hover, .xSquare, .oSquare {
     background-size: 5vw;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.active.xCandidate:hover {
+.active.xCandidate:hover, .xSquare {
     
     background-size: 75%;
     background-image: url('./components/space/X.svg');
 }
 
-.active.yCandidate:hover {
+.active.yCandidate:hover, .oSquare {
     
     background-size: 75%;
     background-image: url('./components/space/O.svg');

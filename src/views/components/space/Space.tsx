@@ -14,15 +14,15 @@ function Space(props: {square: Square; active: boolean; isX: boolean, position: 
 
     if (props.square === Square.X) {
         return (
-            <img src={X} alt="" className="space"/>  
+            <img src={X} alt="" className="space xSquare"/>  
         );
     } else if (props.square === Square.O) {
         return (
-            <img src={O} alt="" className="space"/>
+            <img src={Empty} alt="" className="space oSquare"/> 
         );
     } else {
         return (
-            <img src={Empty} alt="" onClick={clickHandler} className={`space emptyspace${props.active ? ' active' : ''}${props.isX ? ' xCandidate' : ' yCandidate'}`}/>
+            <img src={Empty} alt="" onClick={clickHandler} className={`space ${props.active ? ' active' : ''}${props.isX ? ' xCandidate' : ' yCandidate'}`}/>
         );
     }
 }
