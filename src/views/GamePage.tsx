@@ -84,6 +84,11 @@ function GamePage(): JSX.Element {
         
         const status = await gameManager.checkStatus(code, true, userID);
         
+        if (status.found === false) {
+            alert(`Match ${code} not found!`);
+            window.location.href = '/';
+        }
+        
         const players = status.players as Player[];
         
         if (status.started || players.length === 2) {

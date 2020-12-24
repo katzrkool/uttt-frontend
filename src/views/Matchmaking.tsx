@@ -20,11 +20,16 @@ function Matchmaking(): JSX.Element {
             let name = params.name;
             if (name === undefined) {
                 window.location.href = '/';
+                return;
             }
             if (typeof name !== 'string') {
                 name = name.join(' ');
             }
             const resp = await gameManager.matchmake(name);
+            if (resp.userID === undefined) {
+                window.location.href = `/join/${resp.code}?name=${name}`;
+                return;
+            }
             setStatus(resp ? `Game Code: ${resp.code} - Waiting for Opponent...` : 'Matchmaking Failed. Please try again later');
             setCode(resp.code);
             const gameData = await gameManager.waitForMatchStarted(resp.code);

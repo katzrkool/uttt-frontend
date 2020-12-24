@@ -183,7 +183,7 @@ class GameManager {
     }
     
     async matchmake(name: string): Promise<{
-        userID: string,
+        userID?: string,
         code: string
     }> {
         
@@ -193,6 +193,10 @@ class GameManager {
         });
         if (!resp.code) {
             console.error('Error on matchmake: No code returned.');
+        }
+        // This now means, we're joining a match if a userID is not returned, so we need to manually join. Going to just redirect to the URL.
+        if (!resp.userID) {
+            return {code: resp.code as string};
         }
         localStorage.setItem(resp.code as string, JSON.stringify({
             userID: resp.userID as string,
