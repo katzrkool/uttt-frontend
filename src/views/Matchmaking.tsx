@@ -3,6 +3,7 @@ import {useLocation} from 'react-router-dom';
 import gameManager from '../gameManager';
 import * as querystring from 'querystring';
 import LoadingPage from './LoadingPage';
+import ConnectionStatus from '../interfaces/ConnectionStatus';
 
 function Matchmaking(): JSX.Element {
     const [status, setStatus] = useState<string>('Finding Match...');
@@ -32,6 +33,18 @@ function Matchmaking(): JSX.Element {
             }
             setStatus(resp ? `Game Code: ${resp.code} - Waiting for Opponent...` : 'Matchmaking Failed. Please try again later');
             setCode(resp.code);
+            gameManager.sock.onclose = (event) => {
+                if (event.code === 1002) {
+                    console.error(`Websocket error observed: ${JSON.stringify(event)}`);
+                    alert(`Websocket error observed: ${event.reason}`);
+                } else if (!event.wasClean) {
+                    console.error(`Unexpected disconnect from server: ${JSON.stringify(event)}`);
+                }
+                if (gameManager.setConnection) {
+                    gameManager.setConnection(ConnectionStatus.disconnected);
+                }
+                window.location.href = '/';
+            };
             const gameData = await gameManager.waitForMatchStarted(resp.code);
             if (gameData.resp.code) {
                 window.location.href = `/match/${gameData.resp.code}`;
