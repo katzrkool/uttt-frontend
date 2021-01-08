@@ -47,6 +47,8 @@ function Matchmaking(): JSX.Element {
             };
             const gameData = await gameManager.waitForMatchStarted(resp.code);
             if (gameData.resp.code) {
+                // remove the redirect to homepage bit
+                gameManager.sock.onclose = gameManager.defaultClose;
                 window.location.href = `/match/${gameData.resp.code}`;
             } else {
                 throw new Error('No code recieved from waitForMatchStarted');

@@ -28,6 +28,18 @@ class GameManager {
         this.sock = this.setupSock();
     }
     
+    defaultClose = (event: CloseEvent) => {
+        if (event.code === 1002) {
+            console.error(`Websocket error observed: ${JSON.stringify(event)}`);
+            alert(`Websocket error observed: ${event.reason}`);
+        } else if (!event.wasClean) {
+            console.error(`Unexpected disconnect from server: ${JSON.stringify(event)}`);
+        }
+        if (this.setConnection) {
+            this.setConnection(ConnectionStatus.disconnected);
+        }
+    };
+    
     generateMsgID(): string {
         return randomBytes(20).toString('hex');
     }
@@ -107,17 +119,7 @@ class GameManager {
                 this.msgCallbacks[data.msgID] = data;
             }
         };
-        sock.onclose = (event) => {
-            if (event.code === 1002) {
-                console.error(`Websocket error observed: ${JSON.stringify(event)}`);
-                alert(`Websocket error observed: ${event.reason}`);
-            } else if (!event.wasClean) {
-                console.error(`Unexpected disconnect from server: ${JSON.stringify(event)}`);
-            }
-            if (this.setConnection) {
-                this.setConnection(ConnectionStatus.disconnected);
-            }
-        };
+        sock.onclose = this.defaultClose;
         this.sockIteration += 1;
         return sock;
     }
